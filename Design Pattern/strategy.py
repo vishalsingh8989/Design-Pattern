@@ -1,5 +1,5 @@
 """
-need for dynamically changing an behaviuor of class
+need for dynamically changing an behaivuor of class
 """
 
 import types # support dynamic creation of types
@@ -7,10 +7,10 @@ import types # support dynamic creation of types
 class Strategy:
     
     def __init__(self, function = None):
-        self.name = "Default strategy"
+        self.name = "Default"
         if function:
             self.execute = types.MethodType(function, self)
-            
+        
     
     def execute(self):
         print("{} is used".format(self.name))

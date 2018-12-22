@@ -15,6 +15,7 @@ class DrawingAPITwo(object):
     def draw_circle(self, x,y,radius):
         print("API 2 is drawing cicrle at  {} , {} , radius".format(x,y,radius))
 
+
 class Circle(object):
     """ Implemenatation-independent
     """

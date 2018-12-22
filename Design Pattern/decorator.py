@@ -1,5 +1,16 @@
 from functools import wraps
+import time
 
+
+
+def exe_time(function):
+    
+    
+    def wrapper():
+        start = time.time()
+        ret  = function()
+        print("Time taken : {0}".format(time.time() - start))
+        return ret
 
 def make_blink(function):
     
@@ -12,13 +23,13 @@ def make_blink(function):
         ret  = function()
         return  "<blink>" + ret + "</blink>" 
     return decorator
-    
-@make_blink
+   
+@make_blink    
+@exe_time
 def hello_word():
     """original function"""
     return "hello world"
 
 
 print(hello_word())
-print(hello_word.__name__)
-print(hello_word.__doc__)
+
